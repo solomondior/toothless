@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Navigator</title>
+        <meta name="description" content="" />
+        <link
+            rel="shortcut icon"
+            href="./assets/logo/logo.png"
+            type="image/x-icon"
+        />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="Title of the project" />
+        <meta property="og:description" content="" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://github.com/PaulleDemon" />
+        <!--Replace with the current website url-->
+        <meta property="og:image" content="" />
+
+        <!-- <link rel="stylesheet" href="../../tailwind-css/tailwind-runtime.css" /> -->
+        <link rel="stylesheet" href="./css/tailwind-build.css">
+        <link rel="stylesheet" href="css/index.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body
+        class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-white tw-text-black"
+    >
+        <style>
+  html, body {
+    overflow-x: hidden !important;
+    width: 100vw;
+    max-width: 100vw;
+  }
+</style>
+        <!-- Cartoonish Centered Header Start -->
+<style>
+  .header-nav-link {
+    transition: color 0.2s;
+    cursor: pointer;
+  }
+  .header-nav-link:hover {
+    color: #e0e0e0;
+  }
+  .btn-interactive {
+    transition: transform 1.5s cubic-bezier(.4,2,.6,1.2);
+    display: inline-block;
+    cursor: pointer;
+  }
+  .btn-interactive:hover {
+    transform: scale(1.08);
+    z-index: 2;
+  }
+  .shake-interactive {
+    transition: transform 2s cubic-bezier(.4,2,.6,1.2);
+    display: inline-block;
+    cursor: pointer;
+  }
+  .shake-interactive:hover {
+    animation: wobbleDiag 2s cubic-bezier(.36,.07,.19,.97) both;
+    transform: scale(1.06);
+    z-index: 2;
+  }
+  @keyframes wobbleDiag {
+    10% { transform: translate(-2px, 2px) rotate(-2deg); }
+    20% { transform: translate(3px, -2px) rotate(2deg); }
+    30% { transform: translate(-4px, 3px) rotate(-3deg); }
+    40% { transform: translate(4px, -3px) rotate(3deg); }
+    50% { transform: translate(-3px, 2px) rotate(-2deg); }
+    60% { transform: translate(3px, -2px) rotate(2deg); }
+    70% { transform: translate(-2px, 2px) rotate(-1deg); }
+    80% { transform: translate(2px, -2px) rotate(1deg); }
+    90% { transform: translate(-1px, 1px) rotate(-1deg); }
+    100% { transform: translate(0,0) rotate(0deg); }
+  }
+  .toothless-animate {
+    animation: toothless-pulse 1.2s ease-in-out infinite;
+    display: inline-block;
+  }
+  @keyframes toothless-pulse {
+    0% { transform: rotate(-5deg) scale(1); }
+    50% { transform: rotate(-5deg) scale(1.08); }
+    100% { transform: rotate(-5deg) scale(1); }
+  }
+</style>
+<div style="position:relative;margin:-115px auto 0 auto;width:80vw;max-width:1300px;height:270px;background:transparent;">
+  <svg viewBox="0 0 1300 270" width="100%" height="100%" style="position:absolute;top:0;left:0;z-index:1;pointer-events:none;" preserveAspectRatio="none">
+    <path d="M10,165 Q80,135 240,165 Q400,195 560,165 Q720,135 880,165 Q1040,195 1260,165 L1290,250 L10,250 Z" fill="#ff9800" stroke="black" stroke-width="6"/>
+    <!-- Social/Chart Icons -->
+    <g style="pointer-events:all;">
+      <a href="https://x.com/toothless_dev" target="_blank" rel="noopener noreferrer">
+        <g transform="translate(1000,185)">
+          <circle cx="30" cy="30" r="28" fill="#fff" stroke="#111" stroke-width="3"/>
+          <svg x="13" y="13" width="34" height="34" viewBox="0 0 24 24" fill="none">
+            <path d="M17.53 2H21.5L14.36 10.32L22.75 21.5H16.08L10.97 14.93L5.19 21.5H1.21L8.78 12.67L0.75 2H7.58L12.18 7.97L17.53 2ZM16.36 19.57H18.19L6.47 3.82H4.53L16.36 19.57Z" fill="#111"/>
+          </svg>
+        </g>
+      </a>
+      <a href="https://letsbonk.fun/token/9cQLa4fAyuYLBMhgZ5VAgH5evCVa22Trgxv5DDCbonk" target="_blank" rel="noopener noreferrer">
+        <g transform="translate(1080,185)">
+          <circle cx="30" cy="30" r="28" fill="#fff" stroke="#111" stroke-width="3"/>
+          <svg x="13" y="13" width="34" height="34" viewBox="0 0 24 24" fill="none">
+            <rect x="4" y="14" width="3" height="6" rx="1.5" fill="#ff9800"/>
+            <rect x="10.5" y="10" width="3" height="10" rx="1.5" fill="#ff9800"/>
+            <rect x="17" y="6" width="3" height="14" rx="1.5" fill="#ff9800"/>
+          </svg>
+        </g>
+      </a>
+    </g>
+  </svg>
+  <!-- Navigation container: adjust top, left, right, height, font-size for micro-tweaks -->
+  <div style="position:absolute;top:190px;left:0px;right:550px;height:60px;display:flex;align-items:center;justify-content:center;gap:48px;font-size:2.2rem;font-family:'Gloria Hallelujah',cursive;font-weight:bold;color:#111;letter-spacing:2px;z-index:2;">
+    <span class="header-nav-link">$Toothless</span>
+    <a class="header-nav-link" href="#memes-section" style="text-decoration:none;color:inherit;">Memes</a>
+    <a class="header-nav-link" href="#tokenomics-section" style="text-decoration:none;color:inherit;">Tokenomics</a>
+                </div>
+            </div>
+<!-- Cartoonish Centered Header End -->
+
+        <section
+            class="hero-section tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden max-md:tw-mt-[50px]"
+            id="hero-section"
+        >
+            <div
+                class="tw-flex tw-h-full tw-min-h-[100vh] tw-w-full tw-flex-col tw-place-content-center tw-gap-6 tw-p-[5%] max-xl:tw-place-items-center max-lg:tw-p-4"
+            >
+                <div
+                    class="tw-flex tw-flex-col tw-place-content-center tw-items-center"
+                >
+                    <div
+                        class="reveal-up toothless-animate tw-text-center tw-text-6xl tw-font-semibold tw-uppercase tw-leading-[80px] max-lg:tw-text-4xl max-md:tw-leading-snug"
+                        style="margin-top: 0; margin-bottom: 0.5rem; position: relative; top: -60px;"
+                    >
+                        Toothless
+                    </div>
+                    <ul class="tw-mt-2 tw-text-2xl tw-font-medium tw-text-black tw-space-y-2 max-md:tw-text-lg tw-list-none tw-flex tw-flex-col tw-items-center">
+                        <li class="tw-flex tw-items-center"><span class="tw-inline-block tw-h-3 tw-w-3 tw-bg-black tw-rounded-full tw-mr-3"></span>100% Community-Driven</li>
+                        <li class="tw-flex tw-items-center"><span class="tw-inline-block tw-h-3 tw-w-3 tw-bg-black tw-rounded-full tw-mr-3"></span>No Utility, Just Fun</li>
+                        <li class="tw-flex tw-items-center"><span class="tw-inline-block tw-h-3 tw-w-3 tw-bg-black tw-rounded-full tw-mr-3"></span>Viral Meme</li>
+                    </ul>
+                </div>
+
+                <div
+                    class="reveal-up tw-relative tw-mt-8 tw-flex tw-w-full tw-place-content-center tw-place-items-center"
+                    id="dashboard-container"
+                >
+                    
+                </div>
+
+                <!-- Remove the div containing the description and the buttons below the hero image -->
+            </div>
+            <div
+                style="position:absolute;top:40px;left:40px;z-index:2;max-width:600px;max-height:600px;"
+                    >
+                        <img
+                    src="./assets/images/home/logo.gif"
+                    alt="dashboard"
+                    class="tw-max-h-[600px] tw-max-w-[600px] tw-object-contain"
+                />
+            </div>
+        </section>
+
+<!-- Cartoonish Banner Start -->
+<style>
+  .toothless-marquee-container {
+    width: 100%;
+    background: #e0e0e0;
+    border-top: 4px solid #111;
+    border-bottom: 4px solid #111;
+    overflow: hidden;
+    padding: 18px 0;
+    position: relative;
+  }
+  .toothless-marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #111;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    animation: toothless-marquee 18s linear infinite;
+  }
+  @keyframes toothless-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>
+<div class="toothless-marquee-container">
+  <div class="toothless-marquee-track">
+    <span style="display:flex;align-items:center;gap:10px;"><img src="./assets/logo/logo.png" alt="logo" style="height:38px;width:auto;vertical-align:middle;" />Toothless</span>
+    <span style="display:flex;align-items:center;gap:10px;"><img src="./assets/logo/logo.png" alt="logo" style="height:38px;width:auto;vertical-align:middle;" />Toothless</span>
+    <span style="display:flex;align-items:center;gap:10px;"><img src="./assets/logo/logo.png" alt="logo" style="height:38px;width:auto;vertical-align:middle;" />Toothless</span>
+    <span style="display:flex;align-items:center;gap:10px;"><img src="./assets/logo/logo.png" alt="logo" style="height:38px;width:auto;vertical-align:middle;" />Toothless</span>
+    <span style="display:flex;align-items:center;gap:10px;"><img src="./assets/logo/logo.png" alt="logo" style="height:38px;width:auto;vertical-align:middle;" />Toothless</span>
+    <span style="display:flex;align-items:center;gap:10px;"><img src="./assets/logo/logo.png" alt="logo" style="height:38px;width:auto;vertical-align:middle;" />Toothless</span>
+    <span style="display:flex;align-items:center;gap:10px;"><img src="./assets/logo/logo.png" alt="logo" style="height:38px;width:auto;vertical-align:middle;" />Toothless</span>
+    <span style="display:flex;align-items:center;gap:10px;"><img src="./assets/logo/logo.png" alt="logo" style="height:38px;width:auto;vertical-align:middle;" />Toothless</span>
+    <span style="display:flex;align-items:center;gap:10px;"><img src="./assets/logo/logo.png" alt="logo" style="height:38px;width:auto;vertical-align:middle;" />Toothless</span>
+    <span style="display:flex;align-items:center;gap:10px;"><img src="./assets/logo/logo.png" alt="logo" style="height:38px;width:auto;vertical-align:middle;" />Toothless</span>
+                    </div>
+                </div>
+<!-- Cartoonish Banner End -->
+
+<section class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-p-6">
+  <h3 style="font-size:3.5rem;font-weight:200;text-shadow:1px 0 0 #111, 0 1px 0 #111, -1px 0 0 #111, 0 -1px 0 #111;margin-bottom:0.1rem;text-align:center;">ABOUT</h3>
+  <h2 style="font-size:3.5rem;font-weight:200;text-shadow:1px 0 0 #111, 0 1px 0 #111, -1px 0 0 #111, 0 -1px 0 #111;margin-bottom:0.1rem;text-align:center;">Toothless</h2>
+  <img src="./assets/images/home/standing.png" alt="Toothless standing" style="max-width:400px;width:100%;margin-top:8px;" />
+  <p style="max-width:900px;margin-top:32px;font-size:1.35rem;text-align:center;color:#111;font-family:'Gloria Hallelujah',cursive;line-height:1.5;font-weight:900;">
+    Dancing Toothless isn’t just a meme—it’s a chaotic, pixelated dragon born from the wildest corners of internet humor, a symbol of carefree joy and unapologetic groove. With its shiny black scales, big googly eyes, and a mischievous grin, this quirky icon from How to Train Your Dragon fan culture twirls through the digital realm with awkward yet endearing dance moves. It’s the embodiment of pure, unfiltered fun—grooving to an imaginary beat that resonates with anyone who’s ever danced like nobody’s watching.
+  </p>
+  <a href="#" class="btn-interactive" style="display:inline-block;margin-top:32px;padding:18px 48px;background:#888888;border-radius:32px;font-size:2rem;font-family:'Gloria Hallelujah',cursive;font-weight:bold;color:#fff;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.08);letter-spacing:1px;transition:background 0.2s;">OUR COMMUNITY</a>
+  <hr style="display:block;margin:32px 0 100px 0;border:0;border-top:12px solid #000;width:100%;border-radius:0;" />
+        </section>
+
+<!-- Move meme section above tokenomics section -->
+        <section
+            id="memes-section"
+            class="tw-mt-5 tw-flex tw-min-h-[80vh] tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-p-[2%] max-lg:tw-p-3"
+        >
+            <h3
+        class="reveal-up tw-text-center tw-text-6xl tw-font-bold max-md:tw-text-4xl"
+            >
+        Memes
+            </h3>
+            <!-- articles -->
+            <div
+        class="reveal-up tw-mt-10 tw-flex tw-flex-wrap tw-place-content-center tw-gap-4 max-lg:tw-flex-col"
+            >
+                <a
+                    href=""
+                    class="tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-4 tw-overflow-clip tw-rounded-lg tw-p-4 max-lg:tw-w-[300px]"
+                >
+                    <div
+                class="tw-h-[180px] tw-w-full tw-overflow-hidden tw-rounded-md tw-relative"
+                    >
+                        <img
+                    src="./assets/images/home/drawing.png"
+                            alt="article image"
+                    class="tw-h-full tw-w-full tw-object-contain tw-transition-transform tw-duration-[0.3s] hover:tw-scale-[1.04]"
+                            srcset=""
+                        />
+                <img
+                    src="./assets/images/home/toothless-cat-cat.gif"
+                    alt="Toothless Cat Meme"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;pointer-events:none;z-index:2;"
+                        />
+                    </div>
+                </a>
+                <a
+                    href=""
+                    class="tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-4 tw-overflow-clip tw-rounded-lg tw-p-4 max-lg:tw-w-[300px]"
+                >
+                    <div
+                class="tw-h-[180px] tw-w-full tw-overflow-hidden tw-rounded-md tw-relative"
+                    >
+                        <img
+                    src="./assets/images/home/drawing.png"
+                            alt="article image"
+                    class="tw-h-full tw-w-full tw-object-contain tw-transition-transform tw-duration-[0.3s] hover:tw-scale-[1.04]"
+                            srcset=""
+                        />
+                <img
+                    src="./assets/images/home/toothless-dancing.gif"
+                    alt="Toothless Dancing Meme"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;pointer-events:none;z-index:2;"
+                        />
+                    </div>
+                </a>
+                <a
+                    href=""
+                    class="tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-4 tw-overflow-clip tw-rounded-lg tw-p-4 max-lg:tw-w-[300px]"
+                >
+                    <div
+                class="tw-h-[180px] tw-w-full tw-overflow-hidden tw-rounded-md tw-relative"
+                    >
+                        <img
+                    src="./assets/images/home/drawing.png"
+                            alt="article image"
+                    class="tw-h-full tw-w-full tw-object-contain tw-transition-transform tw-duration-[0.3s] hover:tw-scale-[1.04]"
+                            srcset=""
+                        />
+                <img
+                    src="./assets/images/home/toothless-dancing (1).gif"
+                    alt="Toothless Dancing 1 Meme"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;pointer-events:none;z-index:2;"
+                />
+            </div>
+        </a>
+        <a
+            href=""
+            class="tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-4 tw-overflow-clip tw-rounded-lg tw-p-4 max-lg:tw-w-[300px]"
+        >
+            <div
+                class="tw-h-[180px] tw-w-full tw-overflow-hidden tw-rounded-md tw-relative"
+            >
+                <img
+                    src="./assets/images/home/drawing.png"
+                    alt="article image"
+                    class="tw-h-full tw-w-full tw-object-contain tw-transition-transform tw-duration-[0.3s] hover:tw-scale-[1.04]"
+                    srcset=""
+                />
+                <img
+                    src="./assets/images/home/trickywi-dance.gif"
+                    alt="Trickywi Dance Meme"
+                    style="position:absolute;top:50%;left:50%;width:100%;height:100%;object-fit:contain;z-index:2;pointer-events:none;transform:translate(-50%,-50%) scale(0.8);"
+                />
+                    </div>
+        </a>
+        <a href="" class="tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-4 tw-overflow-clip tw-rounded-lg tw-p-4 max-lg:tw-w-[300px]">
+            <div class="tw-h-[180px] tw-w-full tw-overflow-hidden tw-rounded-md tw-relative">
+                <img src="./assets/images/home/drawing.png" alt="canvas" class="tw-h-full tw-w-full tw-object-contain tw-transition-transform tw-duration-[0.3s] hover:tw-scale-[1.04]" />
+                <img
+                    src="./assets/images/home/porsha-vhiz-porsha-vhiz-toothless-dancing.gif"
+                    alt="Porsha Vhiz Toothless Dancing Meme"
+                    style="position:absolute;top:50%;left:50%;width:100%;height:100%;object-fit:contain;z-index:2;pointer-events:none;transform:translate(-50%,-50%) scale(0.8);"
+                />
+                    </div>
+        </a>
+        <a href="" class="tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-4 tw-overflow-clip tw-rounded-lg tw-p-4 max-lg:tw-w-[300px]">
+            <div class="tw-h-[180px] tw-w-full tw-overflow-hidden tw-rounded-md tw-relative">
+                <img src="./assets/images/home/drawing.png" alt="canvas" class="tw-h-full tw-w-full tw-object-contain tw-transition-transform tw-duration-[0.3s] hover:tw-scale-[1.04]" />
+                <img
+                    src="./assets/images/home/gordita-seagull.gif"
+                    alt="Gordita Seagull Meme"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;z-index:2;pointer-events:none;"
+                />
+                </div>
+        </a>
+        <a href="" class="tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-4 tw-overflow-clip tw-rounded-lg tw-p-4 max-lg:tw-w-[300px]">
+            <div class="tw-h-[180px] tw-w-full tw-overflow-hidden tw-rounded-md tw-relative">
+                <img src="./assets/images/home/drawing.png" alt="canvas" class="tw-h-full tw-w-full tw-object-contain tw-transition-transform tw-duration-[0.3s] hover:tw-scale-[1.04]" />
+                <img
+                    src="./assets/images/home/toothlesswhite-dancing.gif"
+                    alt="Toothless White Dancing Meme"
+                    style="position:absolute;top:50%;left:50%;width:100%;height:100%;object-fit:contain;z-index:2;pointer-events:none;transform:translate(-50%,-50%) scale(0.8);"
+                />
+                    </div>
+        </a>
+                    </div>
+</section>
+<hr style="display:block;margin:32px 0 24px 0;border:0;border-top:8px solid #000;width:100%;border-radius:0;" />
+<!-- Tokenomics Details Section Start -->
+<div id="tokenomics-section" style="width:100%;display:flex;justify-content:center;margin-bottom:0;margin-top:0;scroll-margin-top:100px;">
+  <div class="shake-interactive" style="background:#e0e0e0;border-radius:14px;padding:18px 12px 16px 12px;max-width:700px;width:95vw;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+    <div style="font-size:1.6rem;font-family:'Gloria Hallelujah',cursive;font-weight:bold;text-align:center;margin-bottom:18px;">Tokenomics Details</div>
+    <div style="display:flex;justify-content:space-around;align-items:flex-start;gap:16px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:120px;text-align:center;">
+        <div style="font-size:2rem;font-family:'Gloria Hallelujah',cursive;font-weight:bold;color:#fff;">10%</div>
+        <div style="font-size:1.1rem;font-family:'Gloria Hallelujah',cursive;font-weight:400;color:#222;margin-top:4px;">SAVED FOR CEX</div>
+                </div>
+      <div style="flex:1;min-width:120px;text-align:center;">
+        <div style="font-size:2rem;font-family:'Gloria Hallelujah',cursive;font-weight:bold;color:#fff;">2%</div>
+        <div style="font-size:1.1rem;font-family:'Gloria Hallelujah',cursive;font-weight:400;color:#222;margin-top:4px;">TREASURY</div>
+                    </div>
+                    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;">
+      <div style="font-size:1.3rem;font-family:'Gloria Hallelujah',cursive;font-weight:400;color:#111;text-align:left;">
+        Launched on:<br>Dev holding:
+                </div>
+      <div style="font-size:1.3rem;font-family:'Gloria Hallelujah',cursive;font-weight:400;color:#111;text-align:right;">
+        BONK<br>3%
+                    </div>
+                    </div>
+                </div>
+            </div>
+<!-- Tokenomics Details Section End -->
+<hr style="display:block;margin:32px 0 64px 0;border:0;border-top:12px solid #000;width:100vw;border-radius:0;margin-left:calc(-50vw + 50%);" />
+
+        <section class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-p-[5%] tw-px-[10%] max-md:tw-px-2">
+            <div style="width: 800px; height: 800px; background: url('./assets/images/home/drawing2.png') center center/cover no-repeat; border-radius: 40px; position: relative; overflow: hidden;">
+                <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
+                <span style="font-size:2.07rem;font-family:'Gloria Hallelujah',cursive;text-align:center;">Join $Toothless Dance Party!</span>
+                <span style="font-size:1.15rem;font-family:'Gloria Hallelujah',cursive;color:#232936;">9cQLa4fAyuYLBMhgZ5VAgH5evCVa22Trgxv5DDCbonk</span>
+                <img src="./assets/images/home/phone.png" alt="Phone" style="height: 160px; width: auto;" />
+                </div>
+            </div>
+        </section>
+
+<!-- Floating Live Card Start -->
+<style>
+  .floating-live-card {
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    width: 180px;
+    background: #222;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.25);
+    border: 3px solid #ff9800;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 12px 12px 12px;
+    font-family: 'Gloria Hallelujah', cursive;
+    transition: width 0.4s cubic-bezier(.4,2,.6,1.2), height 0.4s cubic-bezier(.4,2,.6,1.2), box-shadow 0.3s;
+    cursor: pointer;
+    overflow: initial;
+    position: fixed;
+    /* Make sure children with absolute position are visible */
+    max-width: 100vw;
+  }
+  .floating-live-card:hover {
+    width: 390px;
+    max-width: 85vw;
+    height: 370px;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.35);
+  }
+  .floating-live-badge {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    background: #ff9800;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 2px 10px;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  }
+  .floating-live-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    margin-top: 18px;
+    background: #fff;
+    border: 2px solid #ff9800;
+  }
+  .floating-live-footer {
+    margin-top: 8px;
+    color: #ff9800;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: #181818;
+    border-radius: 8px;
+    padding: 4px 0;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 1px;
+    border: 1.5px solid #ff9800;
+  }
+  .ca-box {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    border-radius: 14px;
+    border: none;
+    box-shadow: none;
+    margin-top: 18px;
+    padding: 18px 18px 10px 18px;
+    width: 100%;
+    max-width: none;
+    color: #232323;
+    font-family: 'Gloria Hallelujah', cursive;
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    position: relative;
+    z-index: 10;
+  }
+  .floating-live-card:hover .ca-box {
+    display: flex;
+    opacity: 1;
+    animation: fadeInBg 0.3s;
+  }
+  .ca-label {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+  .ca-address-row {
+    background: transparent;
+    border-radius: 8px;
+    padding: 5px 8px;
+    display: flex;
+    align-items: center;
+    font-size: 0.68rem;
+    font-family: 'Fira Mono', 'Consolas', monospace;
+    color: #fff;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+    width: 100%;
+    cursor: pointer;
+    gap: 6px;
+    justify-content: space-between;
+    max-width: none;
+  }
+  #caAddressText {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: block;
+    white-space: nowrap;
+  }
+  .ca-copy {
+    margin-left: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    min-width: 22px;
+    flex-shrink: 0;
+    outline: none;
+  }
+  .ca-copy:hover, .ca-copy:focus {
+    color: #fff;
+    filter: none;
+  }
+  .ca-copy.copied {
+    color: #fff !important;
+    filter: none;
+  }
+  /* Modal styles */
+  .live-modal-bg {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.45);
+    align-items: center;
+    justify-content: center;
+    animation: fadeInBg 0.3s;
+  }
+  .live-modal-bg.active {
+    display: flex;
+  }
+  @keyframes fadeInBg {
+    from { opacity: 0; } to { opacity: 1; }
+  }
+  .live-modal {
+    background: #222;
+    border-radius: 24px;
+    border: 3px solid #ff9800;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.35);
+    padding: 40px 32px 32px 32px;
+    min-width: 340px;
+    max-width: 90vw;
+    color: #fff;
+    font-family: 'Gloria Hallelujah', cursive;
+    position: relative;
+    animation: popIn 0.4s cubic-bezier(.4,2,.6,1.2);
+    text-align: center;
+  }
+  @keyframes popIn {
+    0% { transform: scale(0.7); opacity: 0; }
+    80% { transform: scale(1.08); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .live-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    font-size: 2rem;
+    color: #ff9800;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: color 0.2s;
+  }
+  .live-modal-close:hover {
+    color: #fff;
+  }
+</style>
+<div class="floating-live-card" id="floatingLiveCard">
+  <span class="floating-live-badge">LIVE</span>
+  <img src="./assets/images/home/logo3.gif" alt="Live Logo" class="floating-live-img" />
+  <div class="floating-live-footer">LIVE ON BONK.FUN</div>
+  <div class="ca-box">
+    <div class="ca-label">Contract Address</div>
+    <div class="ca-address-row" id="caAddress" title="Click to copy full address">
+      <span id="caAddressText">9cQLa4fAyuYLBMhgZ5VAgH5evCVa22Trgxv5DDCbonk</span>
+      <span class="ca-copy ca-copy-floating" title="Copy" tabindex="0" aria-label="Copy contract address">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="8" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+          <rect x="10" y="4" width="8" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <span class="ca-copy-feedback-floating" style="display:none;margin-left:6px;font-size:0.7rem;color:#4ade80;">Copied!</span>
+      </span>
+                </div>
+                </div>
+            </div>
+<!-- Modal UI -->
+<div class="live-modal-bg" id="liveModalBg">
+  <div class="live-modal">
+    <button class="live-modal-close" id="liveModalClose">&times;</button>
+    <h2 style="color:#ff9800;font-size:2.2rem;margin-bottom:1rem;">Welcome to the Party!</h2>
+    <p style="font-size:1.3rem;line-height:1.5;margin-bottom:1.5rem;">This is your exclusive backstage pass to the Toothless Dance Party!<br>Get ready for meme magic, live fun, and a whole lot of dragon energy.<br><br><em>More amazing features coming soon...</em></p>
+    <button style="background:#ff9800;color:#222;font-weight:bold;padding:12px 32px;border-radius:12px;font-size:1.2rem;box-shadow:0 2px 8px rgba(0,0,0,0.12);border:none;cursor:pointer;">Let's Go!</button>
+                </div>
+            </div>
+<!-- Floating Live Card End -->
+    </body>
+<div style="width:100vw;text-align:center;padding:18px 0 24px 0;background:transparent;font-family:'Gloria Hallelujah',cursive;font-size:2rem;color:#111;letter-spacing:1px;">
+  © 2025 Toothless.<br>All rights reserved.
+</div>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"
+        integrity="sha512-B1lby8cGcAUU3GR+Fd809/ZxgHbfwJMp0jLTVfHiArTuUt++VqSlJpaJvhNtRf3NERaxDNmmxkdx2o+aHd4bvw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"
+        integrity="sha512-AY2+JxnBETJ0wcXnLPCcZJIJx0eimyhz3OJ55k2Jx4RtYC+XdIi2VtJQ+tP3BaTst4otlGG1TtPJ9fKrAUnRdQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./index.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Floating Live Card Modal Logic
+  const floatingLiveCard = document.getElementById('floatingLiveCard');
+  const liveModalBg = document.getElementById('liveModalBg');
+  const liveModalClose = document.getElementById('liveModalClose');
+
+  // DEBUG: Test click handler for copy icon
+  const testBtn = document.querySelector('.ca-copy-floating');
+  const caAddressTextFloating = document.querySelector('.floating-live-card .ca-address-row span');
+  const caCopyFeedbackFloating = document.querySelector('.floating-live-card .ca-copy-feedback-floating');
+  if (testBtn && caAddressTextFloating && caCopyFeedbackFloating) {
+    testBtn.addEventListener('click', function() {
+      const text = caAddressTextFloating.textContent.trim();
+      if (navigator && navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+          testBtn.classList.add('copied');
+          testBtn.title = 'Copied!';
+          caCopyFeedbackFloating.style.display = 'inline';
+          setTimeout(() => {
+            testBtn.classList.remove('copied');
+            testBtn.title = 'Copy';
+            caCopyFeedbackFloating.style.display = 'none';
+          }, 1200);
+        });
+      }
+    });
+  }
+});
+</script>
+</html>
