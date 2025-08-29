@@ -96,21 +96,21 @@
     <path d="M10,165 Q80,135 240,165 Q400,195 560,165 Q720,135 880,165 Q1040,195 1260,165 L1290,250 L10,250 Z" fill="#22c55e" stroke="black" stroke-width="6"/>
     <!-- Social/Chart Icons -->
     <g style="pointer-events:all;">
-      <a href="https://x.com/toothless_dev" target="_blank" rel="noopener noreferrer">
-        <g transform="translate(1000,185)">
-          <circle cx="30" cy="30" r="28" fill="#fff" stroke="#111" stroke-width="3"/>
-          <svg x="13" y="13" width="34" height="34" viewBox="0 0 24 24" fill="none">
-            <path d="M17.53 2H21.5L14.36 10.32L22.75 21.5H16.08L10.97 14.93L5.19 21.5H1.21L8.78 12.67L0.75 2H7.58L12.18 7.97L17.53 2ZM16.36 19.57H18.19L6.47 3.82H4.53L16.36 19.57Z" fill="#111"/>
+      <a href="https://x.com/toothless_dev" target="_blank" rel="noopener noreferrer" class="header-icon-link">
+        <g transform="translate(1000,185)" class="header-icon-group">
+          <circle cx="30" cy="30" r="28" fill="#fff" stroke="#111" stroke-width="3" class="header-icon-circle"/>
+          <svg x="13" y="13" width="34" height="34" viewBox="0 0 24 24" fill="none" class="header-icon-svg">
+            <path d="M17.53 2H21.5L14.36 10.32L22.75 21.5H16.08L10.97 14.93L5.19 21.5H1.21L8.78 12.67L0.75 2H7.58L12.18 7.97L17.53 2ZM16.36 19.57H18.19L6.47 3.82H4.53L16.36 19.57Z" fill="#111" class="header-icon-path"/>
           </svg>
         </g>
       </a>
-      <a href="https://letsbonk.fun/token/VVoy2XtE7usPwQPGXbLTzYntDsyfZC5nUhNNsDAbonk" target="_blank" rel="noopener noreferrer">
-        <g transform="translate(1080,185)">
-          <circle cx="30" cy="30" r="28" fill="#fff" stroke="#111" stroke-width="3"/>
-          <svg x="13" y="13" width="34" height="34" viewBox="0 0 24 24" fill="none">
-            <rect x="4" y="14" width="3" height="6" rx="1.5" fill="#22c55e"/>
-                          <rect x="10.5" y="10" width="3" height="10" rx="1.5" fill="#22c55e"/>
-                          <rect x="17" y="6" width="3" height="14" rx="1.5" fill="#22c55e"/>
+              <a href="https://letspump.fun/token/8phKfkVMiUZR6uFu7much48JcAE7N34T54PVWmCUpump" target="_blank" rel="noopener noreferrer" class="header-icon-link">
+        <g transform="translate(1080,185)" class="header-icon-group">
+          <circle cx="30" cy="30" r="28" fill="#fff" stroke="#111" stroke-width="3" class="header-icon-circle"/>
+          <svg x="13" y="13" width="34" height="34" viewBox="0 0 24 24" fill="none" class="header-icon-svg">
+            <rect x="4" y="14" width="3" height="6" rx="1.5" fill="#22c55e" class="header-icon-bar"/>
+                          <rect x="10.5" y="10" width="3" height="10" rx="1.5" fill="#22c55e" class="header-icon-bar"/>
+                          <rect x="17" y="6" width="3" height="14" rx="1.5" fill="#22c55e" class="header-icon-bar"/>
           </svg>
         </g>
       </a>
@@ -369,7 +369,7 @@
         Launched on:<br>Dev holding:
                 </div>
       <div style="font-size:1.3rem;font-family:'Gloria Hallelujah',cursive;font-weight:400;color:#111;text-align:right;">
-        BONK<br>3%
+                        PUMP<br>3%
                     </div>
                     </div>
                 </div>
@@ -377,15 +377,7 @@
 <!-- Tokenomics Details Section End -->
 <hr style="display:block;margin:32px 0 64px 0;border:0;border-top:12px solid #000;width:100vw;border-radius:0;margin-left:calc(-50vw + 50%);" />
 
-        <section class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-p-[5%] tw-px-[10%] max-md:tw-px-2">
-            <div style="width: 800px; height: 800px; background: url('./assets/images/home/drawing2.png') center center/cover no-repeat; border-radius: 40px; position: relative; overflow: hidden;">
-                <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
-                <span style="font-size:2.07rem;font-family:'Gloria Hallelujah',cursive;text-align:center;">Join $Toothless Dance Party!</span>
-                <span style="font-size:1.15rem;font-family:'Gloria Hallelujah',cursive;color:#232936;">VVoy2XtE7usPwQPGXbLTzYntDsyfZC5nUhNNsDAbonk</span>
-                <img src="./assets/images/home/phone.png" alt="Phone" style="height: 160px; width: auto;" />
-                </div>
-            </div>
-        </section>
+
 
 <!-- Floating Live Card Start -->
 <style>
@@ -577,6 +569,94 @@
   .live-modal-close:hover {
     color: #fff;
   }
+  
+  /* Interactive Button Styles for Token Section */
+  .contract-address-box {
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 2, 0.6, 1.2);
+  }
+  
+  .contract-address-box:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 8px 24px rgba(34,197,94,0.4);
+    background: #16a34a;
+  }
+  
+  .contract-address-box:active {
+    transform: scale(0.98) translateY(0);
+  }
+  
+  .dexscreener-button {
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 2, 0.6, 1.2);
+  }
+  
+  .dexscreener-button:hover {
+    transform: scale(1.05) translateY(-2px);
+    background: #22c55e !important;
+    color: #111 !important;
+    box-shadow: 0 8px 24px rgba(34,197,94,0.3);
+    border-color: #16a34a;
+  }
+  
+  .dexscreener-button:active {
+    transform: scale(0.98) translateY(0);
+  }
+  
+  .copy-feedback {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .contract-address-box:hover .copy-feedback {
+    opacity: 1;
+  }
+  
+  /* Interactive SVG Header Styles */
+  .header-icon-link {
+    transition: all 0.3s cubic-bezier(0.4, 2, 0.6, 1.2);
+    display: inline-block;
+  }
+  
+  .header-icon-link:hover {
+    /* No shadow - just color changes */
+  }
+  
+  .header-icon-link:hover .header-icon-circle {
+    fill: #888888;
+    stroke: #666666;
+    stroke-width: 4;
+    transition: all 0.3s cubic-bezier(0.4, 2, 0.6, 1.2);
+  }
+  
+  .header-icon-link:hover .header-icon-path {
+    fill: #666666;
+    transition: fill 0.3s cubic-bezier(0.4, 2, 0.6, 1.2);
+  }
+  
+  .header-icon-link:hover .header-icon-bar {
+    fill: #444444;
+    transition: fill 0.3s cubic-bezier(0.4, 2, 0.6, 1.2);
+  }
+  
+  /* Initial state transitions */
+  .header-icon-circle,
+  .header-icon-path,
+  .header-icon-bar {
+    transition: all 0.3s cubic-bezier(0.4, 2, 0.6, 1.2);
+  }
+  
+  /* Header Navigation Text Hover Effects */
+  .header-nav-link {
+    transition: all 0.3s cubic-bezier(0.4, 2, 0.6, 1.2);
+    position: relative;
+  }
+  
+  .header-nav-link:hover {
+    transform: scale(1.05);
+    color: #888888 !important;
+    text-shadow: 0 0 10px rgba(136, 136, 136, 0.5);
+  }
 </style>
 <div class="floating-live-card" id="floatingLiveCard">
   <span class="floating-live-badge">LIVE</span>
@@ -585,7 +665,7 @@
   <div class="ca-box">
     <div class="ca-label">Contract Address</div>
     <div class="ca-address-row" id="caAddress" title="Click to copy full address">
-      <span id="caAddressText">VVoy2XtE7usPwQPGXbLTzYntDsyfZC5nUhNNsDAbonk</span>
+                          <span id="caAddressText">8phKfkVMiUZR6uFu7much48JcAE7N34T54PVWmCUpump</span>
       <span class="ca-copy ca-copy-floating" title="Copy" tabindex="0" aria-label="Copy contract address">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="6" y="8" width="10" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
@@ -606,6 +686,48 @@
                 </div>
             </div>
 <!-- Floating Live Card End -->
+
+<!-- Coin Showcase Section with DexScreener Chart -->
+<section class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-p-6" style="margin-top: 50px;">
+  <h3 style="font-size:3.5rem;font-weight:200;text-shadow:1px 0 0 #111, 0 1px 0 #111, -1px 0 0 #111, 0 -1px 0 #111;margin-bottom:1rem;text-align:center;">TOKEN</h3>
+  <h2 style="font-size:3.5rem;font-weight:200;text-shadow:1px 0 0 #111, 0 1px 0 #111, -1px 0 0 #111, 0 -1px 0 #111;margin-bottom:2rem;text-align:center;">$Toothless</h2>
+  
+  <div style="max-width:1200px;width:100%;margin-bottom:2rem;">
+    <div style="background:#222;border-radius:24px;border:3px solid #22c55e;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,0.35);">
+      <h3 style="color:#22c55e;font-size:2rem;margin-bottom:1rem;text-align:center;font-family:'Gloria Hallelujah',cursive;">Live Chart & Trading</h3>
+      <div style="width:100%;height:600px;border-radius:16px;overflow:hidden;background:#111;">
+        <iframe 
+          src="https://dexscreener.com/solana/8phKfkVMiUZR6uFu7much48JcAE7N34T54PVWmCUpump?embed=1&theme=dark"
+          style="width:100%;height:100%;border:none;border-radius:16px;"
+          title="Toothless Token Chart"
+          allow="clipboard-write"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+  
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;max-width:800px;margin-bottom:2rem;">
+    <div class="contract-address-box" style="background:#22c55e;color:#222;padding:16px 24px;border-radius:16px;font-family:'Gloria Hallelujah',cursive;font-weight:bold;font-size:1.2rem;text-align:center;box-shadow:0 4px 16px rgba(34,197,94,0.3);cursor:pointer;transition:all 0.3s cubic-bezier(0.4, 2, 0.6, 1.2);" onclick="copyContractAddress()">
+      <div style="font-size:0.9rem;margin-bottom:4px;">Contract Address</div>
+      <div style="font-family:monospace;font-size:0.8rem;">8phKfkVMiUZR6uFu7much48JcAE7N34T54PVWmCUpump</div>
+      <div class="copy-feedback" style="font-size:0.8rem;margin-top:4px;opacity:0;transition:opacity 0.3s;">Click to copy!</div>
+    </div>
+    
+    <a href="https://dexscreener.com/solana/8phKfkVMiUZR6uFu7much48JcAE7N34T54PVWmCUpump" target="_blank" rel="noopener noreferrer" class="dexscreener-button" style="background:#111;color:#22c55e;padding:16px 24px;border-radius:16px;font-family:'Gloria Hallelujah',cursive;font-weight:bold;font-size:1.2rem;text-decoration:none;border:2px solid #22c55e;transition:all 0.3s cubic-bezier(0.4, 2, 0.6, 1.2);box-shadow:0 4px 16px rgba(0,0,0,0.2);display:flex;align-items:center;justify-content:center;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        View on DexScreener
+      </div>
+    </a>
+  </div>
+  
+  <p style="max-width:900px;margin-top:16px;font-size:1.2rem;text-align:center;color:#111;font-family:'Gloria Hallelujah',cursive;line-height:1.6;font-weight:600;">
+    Track $Toothless in real-time with live price charts, trading volume, and market data. Join the dragon dance party and watch your investment grow!
+  </p>
+</section>
+
     </body>
 <div style="width:100vw;text-align:center;padding:18px 0 24px 0;background:transparent;font-family:'Gloria Hallelujah',cursive;font-size:2rem;color:#111;letter-spacing:1px;">
   © 2025 Toothless.<br>All rights reserved.
@@ -630,6 +752,24 @@ document.addEventListener('DOMContentLoaded', function() {
   const floatingLiveCard = document.getElementById('floatingLiveCard');
   const liveModalBg = document.getElementById('liveModalBg');
   const liveModalClose = document.getElementById('liveModalClose');
+  
+  // Contract Address Copy Function
+  window.copyContractAddress = function() {
+    const contractAddress = '8phKfkVMiUZR6uFu7much48JcAE7N34T54PVWmCUpump';
+    const copyFeedback = document.querySelector('.copy-feedback');
+    
+    if (navigator && navigator.clipboard) {
+      navigator.clipboard.writeText(contractAddress).then(() => {
+        copyFeedback.textContent = 'Copied!';
+        copyFeedback.style.opacity = '1';
+        
+        setTimeout(() => {
+          copyFeedback.textContent = 'Click to copy!';
+          copyFeedback.style.opacity = '0';
+        }, 2000);
+      });
+    }
+  };
 
   // DEBUG: Test click handler for copy icon
   const testBtn = document.querySelector('.ca-copy-floating');
